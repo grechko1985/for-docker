@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add npm && npm i -g http-server
+RUN apk add npm && npm i -g http-server && apk add bash
 
 VOLUME /home/server
 
