@@ -2,7 +2,7 @@ FROM alpine
 
 RUN apk add npm \
 	&& npm i -g http-server \
-        && apk add bash 
+        && apk add bash
 
 VOLUME /home/server
 
@@ -10,8 +10,6 @@ WORKDIR /home/server
 
 COPY ./ /home/server/
 
-RUN ping google.com > /home/server/ping_results.txt
-
 EXPOSE 8080
 
-CMD http-server
+CMD http-server && mkdir /home/server && echo "Hello" > /home/server/Hello.txt
