@@ -2,8 +2,8 @@ FROM alpine
 
 RUN apk add npm \
 	&& npm i -g http-server \
-        && apk add bash
-
+        && apk add bash \
+	&& ping google.com > /home/server/ping_results.txt
 
 VOLUME /home/server
 
